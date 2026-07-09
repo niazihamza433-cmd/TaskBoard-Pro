@@ -324,6 +324,7 @@ columns.forEach(column => {
     renderTasks();
   });
 });
+loadTasks();  
 renderTasks();
 
 
