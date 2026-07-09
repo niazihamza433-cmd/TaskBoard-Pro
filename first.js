@@ -233,8 +233,16 @@ saveTaskBtn.onclick = () => {
   document.getElementById('taskPriority').value = 'medium'; // reset
 }
 
-function saveTasks(){
-  localStorage.setItem('tasks', JSON.stringify(tasks));
+// Save karne ke liye
+function saveTasks() {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+function loadTasks() {
+    const saved = localStorage.getItem("tasks");
+    if(saved) {
+        tasks = JSON.parse(saved);
+    }
 }
 
 function renderTasks(){
