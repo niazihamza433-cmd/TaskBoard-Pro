@@ -1,61 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>TaskBoard Pro</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>TaskBoard Pro</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <header>
-  <h1>TaskBoard Pro</h1>
-  <button id="theme-btn">🌙</button>
-  <div class="header-controls">
+    <h1>TaskBoard Pro</h1>
+    <button id="theme-btn">🌙</button>
+  </header>
+
+  <div class="toolbar">
     <input type="text" id="searchInput" placeholder="Search tasks...">
     <select id="priorityFilter">
       <option value="all">All Priority</option>
-      <option value="high">High 🔴</option>
-      <option value="medium">Medium 🟡</option>
-      <option value="low">Low 🟢</option>
+      <option value="high">High</option>
+      <option value="medium">Medium</option>
+      <option value="low">Low</option>
     </select>
     <button id="addTaskBtn">+ Add Task</button>
   </div>
-</header>
 
-<main class="board">
-  <div class="column" data-status="todo">
-    <h2>To Do <span class="count">0</span></h2>
-    <div class="task-list"></div>
+  <!-- 3 COLUMNS -->
+  <div class="board">
+    <div class="column" data-status="todo">
+      <h3>To Do <span class="count">0</span></h3>
+      <div class="task-list"></div>
+    </div>
+    <div class="column" data-status="progress">
+      <h3>In Progress <span class="count">0</span></h3>
+      <div class="task-list"></div>
+    </div>
+    <div class="column" data-status="done">
+      <h3>Done <span class="count">0</span></h3>
+      <div class="task-list"></div>
+    </div>
   </div>
 
-  <div class="column" data-status="progress">
-    <h2>In Progress <span class="count">0</span></h2>
-    <div class="task-list"></div>
+  <!-- MODAL POPUP - YAHI SAVE WALA HAI -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>New Task</h2>
+      <input type="text" id="taskInput" placeholder="Task title">
+      <input type="date" id="taskDate">
+      <select id="taskPriority">
+        <option value="high">High</option>
+        <option value="medium" selected>Medium</option>
+        <option value="low">Low</option>
+      </select>
+      <button id="saveTaskBtn">Save Task</button>
+    </div>
   </div>
 
-  <div class="column" data-status="done">
-    <h2>Done <span class="count">0</span></h2>
-    <div class="task-list"></div>
-  </div>
-</main>
-
-
-<!-- Add Task Modal -->
-<div id="modal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h2>Add New Task</h2>
-    <input type="text" id="taskInput" placeholder="Enter task title...">
-    <input type="date" id="taskDate">
-    <button id="saveTaskBtn">Save Task</button>
-    <select id="taskPriority">
-  <option value="medium">Medium</option>
-  <option value="high">High</option>
-  <option value="low">Low</option>
-</select>
-  </div>
-</div>
-
-<script src="first.js"></script>
+  <script src="first.js"></script>
 </body>
 </html>
