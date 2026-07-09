@@ -324,8 +324,7 @@ columns.forEach(column => {
     renderTasks();
   });
 });
-loadTasks();  
-renderTasks();
+ 
 
 
 //  DARK / LIGHT THEME
@@ -340,7 +339,9 @@ function setTheme() {
         themeBtn.textContent = "🌙";
     }
 }
-setTheme(); // page load pe chalega
+loadTasks();  
+setTheme();   // <-- isko yahan le aao
+renderTasks();
 
 themeBtn.addEventListener("click", () => {
     document.body.classList.toggle("light-mode");
